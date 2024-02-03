@@ -20,8 +20,8 @@ function App() {
           Learn React
           <Weather />
         </a>
-        <h1>Hello </h1>
       </header>
+      <footer>This project was coded by Hasti Salehi</footer>
     </div>
   );
 }
