@@ -11,6 +11,12 @@ root.render(
     <div className="App">
       <h1>Weather App</h1> <br /> <Weather />
     </div>
+    <footer>
+      Coded by Hasyi Salehi published on{" "}
+      <a href="https://github.com/Squiggly7525/Weather-app-react">Github</a>{" "}
+      deployed on{" "}
+      <a href="https://weather-app-react-kappa-six.vercel.app/"> Vercel</a>
+    </footer>
   </React.StrictMode>
 );
 
