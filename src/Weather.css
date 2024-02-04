@@ -1,17 +1,19 @@
 .Weather {
   margin: auto 10px;
   display: block;
-  color: #bdc1c6;
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  color: #000000;
   margin-right: auto;
   margin-left: auto;
+  padding: 15px;
 }
 .Data {
-  background-color: aqua;
-
   margin: auto 10px;
+
+  width: 100%;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 19px;
+  list-style: none;
 }
 
 .Weather ul {
@@ -20,18 +22,38 @@
 }
 
 .Weather li {
+  width: 100%;
   font-size: 16px;
   font-weight: 100;
   line-height: 19px;
   list-style: none;
 }
 
-.Weather .temperature {
-  font-weight: bold;
+.Weather .unit {
   color: rgb(33, 33, 33);
-  font-size: 64px;
-  line-height: 64px;
-  margin-left: 5px;
+  font-size: 16px;
   font-weight: 400;
-  margin-left: 10px;
+  position: relative;
+  line-height: 1;
+  top: -34px;
+}
+
+.search-bar {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.search {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.button {
+  border: 1px solid black;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
 }

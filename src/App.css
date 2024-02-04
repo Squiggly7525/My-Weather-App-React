@@ -5,6 +5,13 @@
   background-color: rgb(232, 232, 232);
   margin: 15px;
   padding: 10px;
+  max-width: 800px;
+}
+h1 {
+  font-size: 24px;
+  font-weight: 100;
+  margin: 20px 0 0 0;
+  line-height: 29px;
 }
 
 .App-logo {
@@ -18,17 +25,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .App-link {
   color: #61dafb;
 }
@@ -40,4 +36,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+footer {
+  text-align: center;
+  font-size: smaller;
 }

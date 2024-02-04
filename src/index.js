@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <div className="App">
-      <h1>Weather App</h1> <br /> <Weather />
+      <br /> <Weather />
     </div>
     <footer>
       Coded by Hasti Salehi published on{" "}

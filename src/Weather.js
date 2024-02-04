@@ -41,21 +41,25 @@ export default function Weather(props) {
   return (
     <div className="Weather">
       <div>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="search"
-            placeholder="Type a city"
-            onChange={updateCity}
-          />
-          <input type="submit" value="Submit" />
-        </form>
+        <div className="search-bar">
+          <form onSubmit={handleSubmit}>
+            <input
+              className="search"
+              type="search"
+              placeholder="Type a city"
+              onChange={updateCity}
+            />
+            <input type="submit" value="Submit" className="button" />
+          </form>
+        </div>
         {weatherDetails && (
           <div className="Data">
             <ul>
-              <li> Results for: {city} </li>
-              <li className="Weather .temperature">
-                Temperature: {temperature}°C
+              <li>
+                {" "}
+                <h1>{city}</h1>{" "}
               </li>
+              <li>Temperature: {temperature}°C</li>
               <li>Feels like: {weatherDetails.feelsLike}°C</li>
               <li>Humidity: {weatherDetails.humidity}%</li>
               <li>date: new Date(response.data.dt * 1000),</li>
