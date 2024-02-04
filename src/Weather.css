@@ -1,3 +1,6 @@
 .Weather {
-  color: red;
+  background-color: blue;
+  border: 1px solid color(srgb rgb(241, 234, 234));
+  margin: auto 10px;
+  border-radius: 10px;
 }
