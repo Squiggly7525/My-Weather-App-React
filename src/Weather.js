@@ -59,7 +59,7 @@ export default function Weather(props) {
                 {" "}
                 <h1>{city}</h1>{" "}
               </li>
-              <li>Temperature: {temperature}°C</li>
+              <span className="">{temperature}°C</span>
               <li>Feels like: {weatherDetails.feelsLike}°C</li>
               <li>Humidity: {weatherDetails.humidity}%</li>
               <li>date: new Date(response.data.dt * 1000),</li>
