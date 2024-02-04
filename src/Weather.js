@@ -52,10 +52,13 @@ export default function Weather(props) {
         {weatherDetails && (
           <div className="Data">
             <ul>
-              <li> City: {city} </li>
-              <li>Temperature: {temperature}°C</li>
+              <li> Results for: {city} </li>
+              <li className="Weather .temperature">
+                Temperature: {temperature}°C
+              </li>
               <li>Feels like: {weatherDetails.feelsLike}°C</li>
               <li>Humidity: {weatherDetails.humidity}%</li>
+              <li>date: new Date(response.data.dt * 1000),</li>
             </ul>
           </div>
         )}
