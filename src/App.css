@@ -2,8 +2,9 @@
   text-align: left;
   border: #282c34 1px solid;
   border-radius: 10px;
-  background-color: blue;
+  background-color: rgb(232, 232, 232);
   margin: 15px;
+  padding: 10px;
 }
 
 .App-logo {
