@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
+import FormattedDate from "./FormattedDate";
 
 export default function Weather(props) {
   let [city, setCity] = useState("");
   let [message, setMessage] = useState("");
   let [temperature, setTemperature] = useState("");
   let [weatherDetails, setWeatherDetails] = useState(null);
-
   function showTemperature(response) {
     setTemperature(Math.round(response.data.main.temp));
     setWeatherDetails({
       feelsLike: Math.round(response.data.main.feels_like),
       humidity: Math.round(response.data.main.humidity),
-      Date: response.data.dt * 1000,
+      date: new Date(response.data.dt * 1000),
     });
+    console.log(response.data.dt * 1000);
     setMessage(
       `City: ${city} Temperature: ${temperature} 
 `
@@ -62,7 +63,9 @@ export default function Weather(props) {
                 <h1>{city}</h1>{" "}
               </li>
               <span className="temperature">{temperature}°C</span>
-              <li>date: {weatherDetails.Date}</li>
+              <li>
+                date: <FormattedDate date={weatherDetails.date} />
+              </li>
               <li>Feels like: {weatherDetails.feelsLike}°C</li>
               <li>Humidity: {weatherDetails.humidity}%</li>
             </ul>
