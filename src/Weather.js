@@ -13,9 +13,7 @@ export default function Weather(props) {
     setWeatherDetails({
       feelsLike: Math.round(response.data.main.feels_like),
       humidity: Math.round(response.data.main.humidity),
-      date: new Date(response.data.dt * 1000),
     });
-    console.log(response.data.dt * 1000);
     setMessage(
       `City: ${city} Temperature: ${temperature} 
 `
@@ -60,7 +58,7 @@ export default function Weather(props) {
             <ul>
               <li>
                 {" "}
-                <h1>{city}</h1>{" "}
+                <h1>{city.toUpperCase()} </h1>{" "}
               </li>
               <span className="temperature">{temperature}°C</span>
               <li>
