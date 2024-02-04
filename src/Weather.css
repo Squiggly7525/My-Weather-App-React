@@ -48,7 +48,7 @@
 }
 
 .search-bar {
-  display: flex;
+  display: inline-block;
 }
 .search {
   width: 100%;
@@ -67,7 +67,6 @@
   border-radius: 10px;
 }
 .button {
-  display: flex;
   border: 1px solid black;
   border-radius: 10px;
   color: #fff;

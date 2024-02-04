@@ -13,6 +13,7 @@ export default function Weather(props) {
     setWeatherDetails({
       feelsLike: Math.round(response.data.main.feels_like),
       humidity: Math.round(response.data.main.humidity),
+      Date: response.data.dt * 1000,
     });
     setMessage(
       `City: ${city} Temperature: ${temperature} 
@@ -41,13 +42,14 @@ export default function Weather(props) {
   return (
     <div className="Weather">
       <div>
-        <div className="search-bar">
-          <form onSubmit={handleSubmit}>
+        <div>
+          <form className="search-bar" onSubmit={handleSubmit}>
             <input
               className="search"
               type="search"
               placeholder="Type a city"
               onChange={updateCity}
+              autoFocus="on"
             />
             <input type="submit" value="Submit" className="button" />
           </form>
@@ -60,9 +62,9 @@ export default function Weather(props) {
                 <h1>{city}</h1>{" "}
               </li>
               <span className="temperature">{temperature}°C</span>
+              <li>date: {weatherDetails.Date}</li>
               <li>Feels like: {weatherDetails.feelsLike}°C</li>
               <li>Humidity: {weatherDetails.humidity}%</li>
-              <li>date: new Date(response.data.dt * 1000),</li>
             </ul>
           </div>
         )}

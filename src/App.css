@@ -5,18 +5,13 @@
   background-color: rgb(232, 232, 232);
   margin: 15px;
   padding: 10px;
-  max-width: 800px;
+  max-width: 600px;
 }
 h1 {
   font-size: 24px;
   font-weight: 100;
   margin: 20px 0 0 0;
   line-height: 29px;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -38,6 +33,8 @@ h1 {
   }
 }
 footer {
-  text-align: center;
+  text-align: left;
   font-size: smaller;
+  margin: 10px;
+  padding: 10px;
 }
