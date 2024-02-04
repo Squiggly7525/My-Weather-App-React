@@ -13,6 +13,8 @@ export default function Weather(props) {
     setWeatherDetails({
       feelsLike: Math.round(response.data.main.feels_like),
       humidity: Math.round(response.data.main.humidity),
+      description: response.data.weather[0].description,
+      wind: response.data.wind.speed,
     });
     setMessage(
       `City: ${city} Temperature: ${temperature} 
@@ -40,36 +42,38 @@ export default function Weather(props) {
 
   return (
     <div className="Weather">
-      <div>
-        <div>
-          <form className="search-bar" onSubmit={handleSubmit}>
-            <input
-              className="search"
-              type="search"
-              placeholder="Type a city"
-              onChange={updateCity}
-              autoFocus="on"
-            />
-            <input type="submit" value="Submit" className="button" />
-          </form>
-        </div>
-        {weatherDetails && (
-          <div className="Data">
-            <ul>
-              <li>
-                {" "}
-                <h1>{city.toUpperCase()} </h1>{" "}
-              </li>
-              <span className="temperature">{temperature}°C</span>
-              <li>
-                <FormattedDate date={weatherDetails.date} />
-              </li>
-              <li>Feels like: {weatherDetails.feelsLike}°C</li>
-              <li>Humidity: {weatherDetails.humidity}%</li>
-            </ul>
-          </div>
-        )}
+      <div className="search-bar">
+        <form onSubmit={handleSubmit}>
+          <input
+            className="search"
+            type="search"
+            placeholder="Type a city"
+            onChange={updateCity}
+            autoFocus="on"
+          />
+          <input type="submit" value="Submit" className="button" />
+        </form>
       </div>
+
+      {weatherDetails && (
+        <div className="Data">
+          <ul>
+            <li>
+              {" "}
+              <h1>{city.toUpperCase()} </h1>{" "}
+            </li>
+            <li>
+              <FormattedDate date={weatherDetails.date} />
+            </li>{" "}
+            <li className="description"> {weatherDetails.description}</li>
+            <span className="temperature">{temperature}</span>{" "}
+            <span className="unit">°C</span>
+            <li>Feels like: {weatherDetails.feelsLike}°C</li>
+            <li>Humidity: {weatherDetails.humidity}%</li>
+            <li>Wind: {weatherDetails.wind} km/h</li>
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
