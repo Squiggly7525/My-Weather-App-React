@@ -1,6 +1,9 @@
 .Weather {
-  background-color: blue;
-  border: 1px solid color(srgb rgb(241, 234, 234));
   margin: auto 10px;
+}
+.Data {
+  background-color: aqua;
   border-radius: 10px;
+  border: 1px solid color(srgb #000000);
+  margin: auto 10px;
 }

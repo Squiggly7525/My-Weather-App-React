@@ -50,12 +50,14 @@ export default function Weather(props) {
           <input type="submit" value="Submit" />
         </form>
         {weatherDetails && (
-          <ul>
-            <li> City: {city} </li>
-            <li>Temperature: {temperature}°C</li>
-            <li>Feels like: {weatherDetails.feelsLike}°C</li>
-            <li>Humidity: {weatherDetails.humidity}%</li>
-          </ul>
+          <div className="Data">
+            <ul>
+              <li> City: {city} </li>
+              <li>Temperature: {temperature}°C</li>
+              <li>Feels like: {weatherDetails.feelsLike}°C</li>
+              <li>Humidity: {weatherDetails.humidity}%</li>
+            </ul>
+          </div>
         )}
       </div>
     </div>
