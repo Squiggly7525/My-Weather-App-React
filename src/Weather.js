@@ -64,7 +64,7 @@ export default function Weather(props) {
               </li>
               <span className="temperature">{temperature}°C</span>
               <li>
-                date: <FormattedDate date={weatherDetails.date} />
+                <FormattedDate date={weatherDetails.date} />
               </li>
               <li>Feels like: {weatherDetails.feelsLike}°C</li>
               <li>Humidity: {weatherDetails.humidity}%</li>
