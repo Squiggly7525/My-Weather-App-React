@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Weather.css";
 import FormattedDate from "./FormattedDate";
 import WeatherTemperature from "./WeatherTemperature";
+import WeatherIcon from "./WeatherIcon";
 
 export default function Weather(props) {
   let [city, setCity] = useState("");
@@ -11,7 +12,6 @@ export default function Weather(props) {
   let [weatherDetails, setWeatherDetails] = useState(null);
   function showTemperature(response) {
     const temperature = Math.round(response.data.main.temp);
-    const iconCode = response.data.weather[0].icon;
     const iconUrl =
       "https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png";
 
@@ -21,6 +21,7 @@ export default function Weather(props) {
       humidity: Math.round(response.data.main.humidity),
       description: response.data.weather[0].description,
       wind: response.data.wind.speed,
+      icon: response.data.weather[0].icon,
     });
     setMessage(
       `City: ${city} Temperature: ${temperature} 
@@ -74,7 +75,11 @@ export default function Weather(props) {
             <li className="description"> {weatherDetails.description}</li>
             <div>
               {" "}
-              <img src={weatherDetails.iconUrl} alt="Weather Icon" />
+              <WeatherIcon code={props.data.icon} />
+              <img
+                src={weatherDetails.iconUrl}
+                alt={weatherDetails.description}
+              />
               <WeatherTemperature celsius={weatherDetails.temperature} />
             </div>{" "}
             <li>Feels like: {weatherDetails.feelsLike}°C</li>
