@@ -16,6 +16,8 @@ export default function Weather(props) {
       feelsLike: Math.round(response.data.main.feels_like),
       humidity: Math.round(response.data.main.humidity),
       description: response.data.weather[0].description,
+      iconCode: response.data.weather[0].icon,
+      iconUrl: `https://openweathermap.org/img/wn/${iconCode}@2x.png`,
       wind: response.data.wind.speed,
     });
     setMessage(
@@ -63,12 +65,16 @@ export default function Weather(props) {
             <li>
               {" "}
               <h1>{city.toUpperCase()} </h1>{" "}
-            </li>
+            </li>{" "}
             <li>
               <FormattedDate date={weatherDetails.date} />
             </li>{" "}
             <li className="description"> {weatherDetails.description}</li>
-            <WeatherTemperature celsius={weatherDetails.temperature} />
+            <div>
+              {" "}
+              <img src={weatherDetails.iconUrl} alt="Weather Icon" />
+              <WeatherTemperature celsius={weatherDetails.temperature} />
+            </div>{" "}
             <li>Feels like: {weatherDetails.feelsLike}°C</li>
             <li>Humidity: {weatherDetails.humidity}%</li>
             <li>Wind: {weatherDetails.wind} km/h</li>
