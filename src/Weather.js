@@ -11,13 +11,15 @@ export default function Weather(props) {
   let [weatherDetails, setWeatherDetails] = useState(null);
   function showTemperature(response) {
     const temperature = Math.round(response.data.main.temp);
+    const iconCode = response.data.weather[0].icon;
+    const iconUrl =
+      "https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png";
+
     setWeatherDetails({
       temperature: temperature,
       feelsLike: Math.round(response.data.main.feels_like),
       humidity: Math.round(response.data.main.humidity),
       description: response.data.weather[0].description,
-      iconCode: response.data.weather[0].icon,
-      iconUrl: `https://openweathermap.org/img/wn/${iconCode}@2x.png`,
       wind: response.data.wind.speed,
     });
     setMessage(
