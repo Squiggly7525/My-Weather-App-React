@@ -12,8 +12,6 @@ export default function Weather(props) {
   let [weatherDetails, setWeatherDetails] = useState(null);
   function showTemperature(response) {
     const temperature = Math.round(response.data.main.temp);
-    const iconUrl =
-      "https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png";
 
     setWeatherDetails({
       temperature: temperature,
@@ -75,11 +73,8 @@ export default function Weather(props) {
             <li className="description"> {weatherDetails.description}</li>
             <div>
               {" "}
-              <WeatherIcon code={props.data.icon} />
-              <img
-                src={weatherDetails.iconUrl}
-                alt={weatherDetails.description}
-              />
+              <WeatherIcon code={weatherDetails.icon} />
+              <img src={weatherDetails.iconUrl} />
               <WeatherTemperature celsius={weatherDetails.temperature} />
             </div>{" "}
             <li>Feels like: {weatherDetails.feelsLike}°C</li>
