@@ -6,26 +6,31 @@ import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherInfo({ city, weatherDetails }) {
   return (
-    <div className="weatherInfo">
-      <ul>
-        <li>
-          {" "}
+    <div className="weather-info">
+      {" "}
+      <div className="main-humidity-wind">
+        <div className="main-data">
           <h1>{city.toUpperCase()} </h1>{" "}
-        </li>{" "}
-        <li>
           <FormattedDate date={weatherDetails.date} />
-        </li>{" "}
-        <li className="description"> {weatherDetails.description}</li>
-        <div>
-          {" "}
+          {", "}
+          <span className="description"> {weatherDetails.description}</span>
+        </div>{" "}
+        <div className="humidity-wind">
+          <span>Humidity: {weatherDetails.humidity}%</span>
+          {", "}
+          <span>Wind: {weatherDetails.wind} km/h</span>
+        </div>
+      </div>
+      <div className="icon-temperature-realfeel">
+        <div className="icon-and-temperature">
           <WeatherIcon code={weatherDetails.icon} size={52} />
           <img src={weatherDetails.iconUrl} />
-          <WeatherTemperature celsius={weatherDetails.temperature} />
-        </div>{" "}
-        <li>Feels like: {weatherDetails.feelsLike}°C</li>
-        <li>Humidity: {weatherDetails.humidity}%</li>
-        <li>Wind: {weatherDetails.wind} km/h</li>
-      </ul>
+          <div className="temp">
+            <WeatherTemperature celsius={weatherDetails.temperature} />
+          </div>
+        </div>
+        <span>Feels like: {weatherDetails.feelsLike}°C</span>
+      </div>
     </div>
   );
 }

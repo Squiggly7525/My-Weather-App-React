@@ -6,6 +6,7 @@
   margin: 15px;
   padding: 10px;
   max-width: 600px;
+  background-color: #aae6f6;
 }
 h1 {
   font-size: 24px;
@@ -14,23 +15,8 @@ h1 {
   line-height: 29px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 footer {
   text-align: left;
