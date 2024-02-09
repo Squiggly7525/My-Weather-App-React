@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./Weather.css";
+import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 import FormattedDate from "./FormattedDate";
 import WeatherTemperature from "./WeatherTemperature";
 import WeatherIcon from "./WeatherIcon";
@@ -61,27 +62,7 @@ export default function Weather(props) {
       </div>
 
       {weatherDetails && (
-        <div className="weatherInfo">
-          <ul>
-            <li>
-              {" "}
-              <h1>{city.toUpperCase()} </h1>{" "}
-            </li>{" "}
-            <li>
-              <FormattedDate date={weatherDetails.date} />
-            </li>{" "}
-            <li className="description"> {weatherDetails.description}</li>
-            <div>
-              {" "}
-              <WeatherIcon code={weatherDetails.icon} />
-              <img src={weatherDetails.iconUrl} />
-              <WeatherTemperature celsius={weatherDetails.temperature} />
-            </div>{" "}
-            <li>Feels like: {weatherDetails.feelsLike}°C</li>
-            <li>Humidity: {weatherDetails.humidity}%</li>
-            <li>Wind: {weatherDetails.wind} km/h</li>
-          </ul>
-        </div>
+        <WeatherInfo city={city} weatherDetails={weatherDetails} />
       )}
     </div>
   );
