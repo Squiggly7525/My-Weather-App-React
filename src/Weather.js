@@ -10,12 +10,14 @@ export default function Weather(props) {
   let [city, setCity] = useState("");
   let [message, setMessage] = useState("");
   let [temperature, setTemperature] = useState("");
-  let [weatherDetails, setWeatherDetails] = useState(null);
+  let [weatherDetails, setWeatherDetails] = useState("");
+
   function showTemperature(response) {
     const temperature = Math.round(response.data.main.temp);
 
     setWeatherDetails({
       temperature: temperature,
+      coordinates: response.data.coord,
       feelsLike: Math.round(response.data.main.feels_like),
       humidity: Math.round(response.data.main.humidity),
       description: response.data.weather[0].description,
@@ -31,7 +33,8 @@ export default function Weather(props) {
   function handleSubmit(event) {
     event.preventDefault();
     if (city !== "") {
-      let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0efb4fc16a9ed98dc0b3aafd8491d6ad&units=metric`;
+      let apiKey = "0efb4fc16a9ed98dc0b3aafd8491d6ad";
+      let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
       axios.get(url).then(showTemperature);
     }
   }
@@ -61,9 +64,11 @@ export default function Weather(props) {
         </form>
       </div>
       {weatherDetails && (
-        <WeatherInfo city={city} weatherDetails={weatherDetails} />
+        <div>
+          <WeatherInfo city={city} weatherDetails={weatherDetails} />
+          <WeatherForecast coordinates={weatherDetails.coordinates} />
+        </div>
       )}{" "}
-      <WeatherForecast />
     </div>
   );
 }
