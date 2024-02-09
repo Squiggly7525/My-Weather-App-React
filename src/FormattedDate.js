@@ -5,6 +5,5 @@ export default function FormattedDate(props) {
   let date = days[new Date().getDay()];
   let hours = new Date().getHours();
   let minutes = new Date().getMinutes();
-  let sec = new Date().getSeconds();
   return `${date} ${hours}:${minutes}`;
 }

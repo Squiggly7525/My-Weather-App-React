@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
-import FormattedDate from "./FormattedDate";
-import WeatherTemperature from "./WeatherTemperature";
-import WeatherIcon from "./WeatherIcon";
 
 export default function Weather(props) {
   let [city, setCity] = useState("");
