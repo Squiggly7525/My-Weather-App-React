@@ -60,10 +60,10 @@ export default function Weather(props) {
           <input type="submit" value="Submit" className="button" />
         </form>
       </div>
-
       {weatherDetails && (
         <WeatherInfo city={city} weatherDetails={weatherDetails} />
-      )}
+      )}{" "}
+      <WeatherForecast />
     </div>
   );
 }
