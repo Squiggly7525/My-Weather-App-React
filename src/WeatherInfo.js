@@ -3,6 +3,7 @@ import "./Weather.css";
 import FormattedDate from "./FormattedDate";
 import WeatherTemperature from "./WeatherTemperature";
 import WeatherIcon from "./WeatherIcon";
+import WeatherForecast from "./WeatherForecast";
 
 export default function WeatherInfo({ city, weatherDetails }) {
   return (
@@ -18,7 +19,7 @@ export default function WeatherInfo({ city, weatherDetails }) {
         <li className="description"> {weatherDetails.description}</li>
         <div>
           {" "}
-          <WeatherIcon code={weatherDetails.icon} />
+          <WeatherIcon code={weatherDetails.icon} size={52} />
           <img src={weatherDetails.iconUrl} />
           <WeatherTemperature celsius={weatherDetails.temperature} />
         </div>{" "}
