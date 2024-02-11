@@ -5,11 +5,11 @@
 }
 
 .main-humidity-wind {
-  flex-grow: 1;
+  align-self: start;
 }
 
 .icon-temperature-realfeel {
-  justify-content: end;
+  align-self: flex-end;
 }
 
 .Weather {
