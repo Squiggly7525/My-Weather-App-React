@@ -1,7 +1,15 @@
+.Weather {
+  margin: auto 10px;
+  padding: 15px;
+  font-family: arial, sans-serif;
+  color: #878787;
+}
+
 .weather-details-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 30px;
 }
 
 .main-humidity-wind {
@@ -10,13 +18,19 @@
 
 .icon-temperature-realfeel {
   align-self: flex-end;
+  display: flex;
+  flex-direction: column;
 }
 
-.Weather {
-  margin: auto 10px;
-  padding: 15px;
-  font-family: arial, sans-serif;
-  color: #878787;
+.icon-and-temperature {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 15px;
+}
+
+.real-feel {
+  text-align: end;
 }
 
 .title {
