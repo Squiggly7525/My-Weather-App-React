@@ -4,9 +4,8 @@ import "bootstrap/dist/css/bootstrap.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
 import Weather from "./Weather";
+import "./App.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,8 +14,8 @@ root.render(
       <br /> <Weather />
     </div>
     <footer>
-      Coded by Hasti Salehi published on{" "}
-      <a href="https://github.com/Squiggly7525/Weather-app-react">Github</a>{" "}
+      Coded by Hasti Salehi. Open-sourced on{" "}
+      <a href="https://github.com/Squiggly7525/Weather-app-react">Github</a> &
       deployed on{" "}
       <a href="https://weather-app-react-kappa-six.vercel.app/"> Vercel</a>
     </footer>

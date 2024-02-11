@@ -22,8 +22,11 @@ export default function WeatherInfo({ city, weatherDetails }) {
       </div>
       <div className="icon-temperature-realfeel">
         <div className="icon-and-temperature">
-          <WeatherIcon code={weatherDetails.icon} size={52} />
-          <img src={weatherDetails.iconUrl} />
+          {" "}
+          <span className="icon">
+            <WeatherIcon code={weatherDetails.icon} size={52} />
+            <img src={weatherDetails.iconUrl} />
+          </span>
           <div className="temp">
             <WeatherTemperature celsius={weatherDetails.temperature} />
           </div>

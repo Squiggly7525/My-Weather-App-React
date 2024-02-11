@@ -7,7 +7,6 @@ function App() {
   return (
     <div className="App">
       <Weather />
-      <p>This project was coded by Hasti Salehi</p>
     </div>
   );
 }

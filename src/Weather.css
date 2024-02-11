@@ -10,10 +10,14 @@
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 30px;
+  margin-top: 20px;
 }
 
 .main-humidity-wind {
   align-self: start;
+}
+.humidity-wind {
+  margin-top: 25px;
 }
 
 .icon-temperature-realfeel {
@@ -26,7 +30,10 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
+}
+.icon {
+  margin-top: 15px;
 }
 
 .real-feel {
@@ -40,19 +47,19 @@
 }
 
 .search-bar {
-  display: flex;
+  display: block;
   margin-right: -15px;
   margin-left: -15px;
+  align-items: center;
 }
 
 .search {
-  flex-grow: 1;
   height: calc(1.5em + 0.75rem + 2px);
   padding: 15px;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  width: 400px;
+  width: 75%;
   color: #495057;
   background-color: #fff;
   border: 1px solid #ced4da;
