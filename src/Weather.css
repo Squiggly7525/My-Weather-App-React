@@ -1,16 +1,7 @@
 .weather-details-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between; /* Adjust as needed */
-}
-
-.Weather-info {
-  display: flex;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-  height: 127.962px;
-  width: 640.007px;
-  text-align: start;
+  justify-content: space-between;
 }
 
 .main-humidity-wind {
@@ -18,8 +9,7 @@
 }
 
 .icon-temperature-realfeel {
-  display: flex;
-  justify-content: flex-end;
+  justify-content: end;
 }
 
 .Weather {
@@ -70,11 +60,6 @@
   border-color: #007bff;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.icon-and-temperature {
-  display: flex;
-  align-items: center;
 }
 
 .temperature {
